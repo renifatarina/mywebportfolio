@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lexend+Deca&family=Livvic&display=swap');
+
+html,body {
+    margin: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+:root {
+    /* theme colors */
+    --bluesky: #B2CDD9;
+    --text-lightgray:#A7B9C3;
+    --text-gray: #788C8E;
+    --red: #8C2112;
+    --salmon: #AA5E4A;
+    --light:#D7ECF0;
+    --tosca: #24444B;
+
+
+    /* gradient color */
+    --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+    /* theme font-family */
+    --Josefin: 'Josefin Sans', sans-serif;
+    --Lexend: 'Lexend Deca', sans-serif;
+    --Livvic: 'Livvic', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* global class start */
+a {
+    text-decoration: none;
+    color: var(--light)
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+ul {
+    
+    list-style-type: none;
+}
+
+h1{
+    font-family: var(--Lexend);
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-family: var(--Lexend);
+}
+
+h3 {
+    font-family: var(--Livvic);
+    font-size: 1.3rem;
+}
+
+h4 {
+    font-family: var(--Lexend);
+    color: var(--light);
+    font-size: 1.5rem;
+}
+
+p {
+    font-family: var(--Josefin);
+    font-size: 1rem;
+}
+
+button.btn {
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-family: var(--Livvic);
+    cursor: pointer;
+    background-color: var(--bluesky);
+}
+
+span {
+    font-family: var(--Josefin);
+}
+
+.container {
+    margin: 0 5vw;
+}
+
+main .skill h1,
+main .portofolio h1 {
+    color: var(--tosca);
+    text-align: center;
+}
+/* global class end */
+
+/* navbar start */
+.nav{
+    background: var(--tosca);
+    padding: 0 2rem;
+    height: 0rem;
+    min-height: 10vh;
+    overflow: hidden;
+    transition: height 1s ease-in-out;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 1;
+}
+
+nav.sticky {
+    background-color: var(--tosca);
+    opacity: 0.8;
+}
+
+.nav .nav-menu {
+    justify-content: space-between;
+}
+
+.nav .toggle-collapse {
+    position: absolute;
+    top: 0%;
+    width: 90%;
+    cursor: pointer;
+    display: none;
+}
+
+.nav .toggle-collapse .toggle-icons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.7rem 0;
+}
+
+.nav .toggle-collapse .toggle-icons i{
+    font-size: 1.4rem;
+    color: var(--light);
+}
+
+.collapse {
+    height: 15rem;
+}
+
+.nav .nav-items {
+    display: flex;
+    margin: 0 50px;
+
+}
+
+.nav .nav-items .nav-link {
+    padding: 1.6rem 1rem;
+    font-size: 1.1rem;
+    position: relative;
+    font-family: var(--Lexend);
+}
+
+.nav .nav-items .nav-link:hover {
+    background-color: var(--text-gray);
+}
+
+.nav .nav-items .nav-link:hover a{
+    color: var(--light);
+}
+
+.nav .nav-brand a{
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    display: block;
+    font-family: var(--Lexend);
+}
+/* navbar end */
+
+/* main content start */
+
+/* home start */
+main .home {
+    height: 100vh;
+    display: flex;
+    background-color: var(--bluesky);
+}
+
+main .home .home-content {
+    color: var(--tosca);
+    /* display: grid;
+    grid-template-columns: 60% 40%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0;
+    overflow: hidden;
+}
+
+main .home .home-title {
+    flex-basis: 60%;
+    position: relative;
+}
+
+.home-title .contact-me {
+    margin: 30px 30%;
+}
+
+.home-title .contact-me a{
+    padding: 10px;
+    color: var(--tosca);
+}
+
+main .home .home-title h1,h3,h2 {
+    margin: .8rem;
+    padding-left: 9rem;
+}
+
+.home-content .home-img img {
+    width: 60%;
+    justify-content: flex-end;
+}
+
+.home-content .home-img {
+    position: relative;
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+}
+
+section .wave {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('../assets/wave.png');
+    background-size: 1000px 100px;
+}
+
+section .wave.wave1 {
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+/* home end */
+
+/* skill start */
+.skill {
+    min-height: 60vh;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 72%, rgba(178,205,217,1) 98%, rgba(178,205,217,1) 100%);
+}
+.skill-content{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+main .skill .container {
+    width: 90%;
+    overflow: hidden;
+    background: var(--light);
+    margin: 20px auto;
+    padding: 20px 0px 40px 0;
+    border-radius: 20px;
+}
+
+.skill ul li {
+    float: left;
+    width: 12%;
+    height: 100px;
+    background-color: var(--tosca);
+    margin: 20px 20px 0px 30px;
+    border-radius: 100%;
+    color: var(--light);
+}
+
+.skill ul li:hover {
+    background-color: var(--text-gray);
+}
+
+.skill ul li .skill-title {
+    width: 100%;
+    line-height: 70px;
+    text-align: center;
+}
+
+.skill .achivement {
+    padding-top: 150px;
+    text-align: center;
+    color: var(--red);
+    margin-left: 0px;
+}
+.skill .achivement h3 {
+    padding-left: 0px;
+}
+
+.skill .achivement hr {
+    width: 50%;
+}
+/* skill end */
+
+/* portofolio start */
+.portofolio {
+    min-height: 100vh;
+    background-color: var(--bluesky);
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+main .portofolio .container {
+    width: 90%;
+    overflow: hidden;
+    margin: 20px auto;
+    padding: 20px 0px 40px 0;
+    border-radius: 20px;
+}
+.portofolio ul li {
+    float: left;
+    width: 25%;
+    height: 350px;
+    background-color: var(--tosca);
+    margin: 40px 40px 0px 55px;
+    padding-bottom: 40px;
+    color: var(--light);
+    border-radius: 10px;
+}
+
+.portofolio .porto-content .porto-img img{
+    width: 98%;
+    border: 2px solid var(--light);
+}
+
+.portofolio .porto-content .porto-img {
+    padding: 10px 10px 0px 10px;
+    margin-top: 10px;
+    margin-bottom: 0%;
+    text-align: center;
+}
+.portofolio .porto-content .porto-title {
+    width: 100%;
+    bottom: 0px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.portofolio .porto-content .porto-title h4 {
+    margin-top: 0%;
+    padding-top: 0%;
+    margin-bottom: 0%;
+}
+
+.portofolio .porto-content .porto-desc p {
+    text-align: center;
+    margin-top: 0;
+    padding: 0 5px;
+}
+
+button.animasi {
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    background-color: var(--light);
+}
+
+button.animasi:active {
+    transform: translate(100px, 52px);
+    -webkit-transform: translate(0px, 5px);
+    border-bottom: 1px solid;
+}
+
+button.btn a {
+    color: var(--tosca);
+}
+/* portofolio end */
+
+/* main content end */
+
+/* footer start */
+footer {
+    height: 5vh;
+    text-align: center;
+    padding: 10px;
+    background: var(--tosca);
+    color: var(--light);
+}
+
+/* footer end */
+
+/* viewport less or equal 750px start */
+@media only screen and (max-width: 750px) {
+    .nav .nav-menu, 
+    .nav .nav-items{
+        flex-direction: column;
+    }
+
+    .nav .toggle-collapse {
+        display: initial;
+    }
+
+    .nav .nav-items .nav-link {
+        padding: 1rem 1rem;
+    }
+
+    .home .contact-me {
+        margin-left:70px;
+        margin-right: 0px;
+    }
+
+    main .home .home-content {
+        flex-direction: column-reverse;
+        margin: 50px 0 ;
+    }
+
+    .home .home-content .home-img {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+
+    .skill .container {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .skill ul li  {
+        width: 90%;
+        margin: 40px auto;
+        float: none;
+    }
+
+    .portofolio .porto-content {
+        padding: 0px;
+    }
+
+    .portofolio .container {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .portofolio ul li {
+        width: 100%;
+        margin: 20px auto;
+        float: none;
+    }
+
+    footer p {
+        padding: 0px;
+        margin: 0px;
+    }
+}
+/* viewport less or equal 750px end */
